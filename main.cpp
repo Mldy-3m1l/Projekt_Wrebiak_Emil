@@ -28,7 +28,7 @@ void gameLoop(Player& player1, Player& player2) {
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cout << "Wrong coordinates, please try again." << endl;
                 } else {
-                    // Sprawdzamy poprawnoœæ ataku
+                    // Sprawdzamy poprawnoÅ“Ã¦ ataku
                     validAttack = (attacker == &player1)
                         ? player2.ownBoard.attack(row, col)
                         : player1.ownBoard.attack(row, col);
@@ -66,6 +66,13 @@ int main() {
  \        / |        \|    |__\     \____/    |    \/    Y    \|        \         |    |   /    |    \
   \__/\  / /_______  /|_______ \______  /\_______  /\____|__  /_______  /         |____|   \_______  /
        \/          \/         \/      \/         \/         \/        \/                           \/
+       __________    ___________________________.____     ___________ _________ ___ ___ ._____________  _________
+       \______   \  /  _  \__    ___/\__    ___/|    |    \_   _____//   _____//   |   \|   \______   \/   _____/
+        |    |  _/ /  /_\  \|    |     |    |   |    |     |    __)_ \_____  \/    ~    \   ||     ___/\_____  \
+        |    |   \/    |    \    |     |    |   |    |___  |        \/        \    Y    /   ||    |    /        \
+        |______  /\____|__  /____|     |____|   |_______ \/_______  /_______  /\___|_  /|___||____|   /_______  /
+               \/         \/                            \/        \/        \/       \/                       \/
+
     )" << endl;
 
     string name1, name2;
