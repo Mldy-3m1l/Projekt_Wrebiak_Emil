@@ -28,7 +28,7 @@ void gameLoop(Player& player1, Player& player2) {
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cout << "Wrong coordinates, please try again." << endl;
                 } else {
-                    // Sprawdzamy poprawnoœæ ataku
+                    // Sprawdzenie ataku
                     validAttack = (attacker == &player1)
                         ? player2.ownBoard.attack(row, col)
                         : player1.ownBoard.attack(row, col);
