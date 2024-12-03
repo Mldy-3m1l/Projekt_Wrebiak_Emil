@@ -46,7 +46,7 @@ void Player::placeShips() {
             }
 
             placed = ownBoard.placeShip(shipSizes[i], row, col, direction == 1);
-            if (!placed) cout << "Invalid coordinates or space occupied. Try again." << endl;
+            if (!placed) cout << "Incorrect coordinates or ships touching . Please try again." << endl;
         }
     }
     clearScreen();
