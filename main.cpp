@@ -28,7 +28,7 @@ void gameLoop(Player& player1, Player& player2) {
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cout << "Wrong coordinates, please try again." << endl;
                 } else {
-                    // Sprawdzenie ataku
+                    // Sprawdzamy poprawność ataku
                     validAttack = (attacker == &player1)
                         ? player2.ownBoard.attack(row, col)
                         : player1.ownBoard.attack(row, col);
@@ -50,12 +50,14 @@ void gameLoop(Player& player1, Player& player2) {
 
             clearScreen();
 
+            // Komunikat o przejściu tury
             cout << "Press Enter to continue " << (attacker == &player1 ? player2.name : player1.name) << "'s turn." << endl;
             cin.ignore();
             cin.get();
         }
     }
 }
+
 
 
 int main() {
@@ -85,8 +87,14 @@ int main() {
     Player player2(name2);
 
     player1.placeShips();
-    player2.placeShips();
+    cout << "All ships placed! Press Enter to continue Player 2's turn." << endl;
+    cin.ignore();
+    cin.get();
 
+    player2.placeShips();
+    cout << "All ships placed! Press Enter to continue Player 1's turn." << endl;
+    cin.ignore();
+    cin.get();
     gameLoop(player1, player2);
 
     return 0;
